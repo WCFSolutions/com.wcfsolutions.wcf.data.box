@@ -1,0 +1,1 @@
+{@$boxTab->htmlCode}

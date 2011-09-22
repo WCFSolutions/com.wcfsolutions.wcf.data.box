@@ -1,0 +1,63 @@
+
+/* ### -- -- -- -- -- Box System Styles -- -- -- -- -- ### */
+
+/* 
+
+File: box.css
+Copyright 2009-2011 by wcfsolutions.com
+
+*/
+
+/* ### -- -- -- -- -- Miscellaneous -- -- -- -- -- ### */
+
+.boxList .contentBox {
+	min-width: 0 !important;
+}
+
+.boxList .contentBox .border .subTabMenu {
+	border: none;
+	margin: 0 0 1px 0;
+	padding: 0;
+}
+
+.boxList .contentBox .border .subTabMenu .containerHead {
+	border: none;
+	margin: 0 1px 0 0;
+}
+
+.boxList .contentBox .tabMenuContent .container-1:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+}
+
+/* ### -- -- -- -- -- Thumbnails / Images -- -- -- -- -- ### */
+
+.boxList .contentBox .thumbnailImage img, .boxList .contentBox .image img {
+	width: 100%;
+}
+
+.boxList .contentBox  .thumbnailImage span, .boxList .contentBox .image span {
+	display: block;
+	margin-top: 5px;
+	text-align: center;
+}
+
+/* ### -- -- -- -- -- Thumbnails -- -- -- -- -- ### */
+
+.boxList .contentBox .thumbnailImage {
+	float: right;
+	margin: 0 0 30px 30px;
+	padding: 5px;
+	max-width: 25%;
+}
+
+/* ### -- -- -- -- -- Images -- -- -- -- -- ### */
+
+.boxList .contentBox .image {
+	padding: 5px;
+	text-align: center;
+}
+
+/* ### -- -- -- -- -- EOF -- -- -- -- -- ### */

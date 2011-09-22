@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.wcfsolutions.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wcfsolutions.com/XSD/box-tab-options.xsd">
+	<import>
+		<categories>
+			<category name="data">
+				<showorder>1</showorder>
+			</category>
+			<category name="settings">
+				<showorder>2</showorder>
+			</category>
+			<category name="thumbnail">
+				<showorder>3</showorder>
+			</category>
+		</categories>
+		<options>
+			<!-- content box tab type -->
+			<option name="text">
+				<boxtabtype>content</boxtabtype>
+				<categoryname>data</categoryname>
+				<optiontype>textarea</optiontype>
+			</option>
+			<option name="thumbnailImage">
+				<boxtabtype>content</boxtabtype>
+				<categoryname>thumbnail</categoryname>
+				<optiontype>text</optiontype>
+			</option>
+			<option name="thumbnailTitle">
+				<boxtabtype>content</boxtabtype>
+				<categoryname>thumbnail</categoryname>
+				<optiontype>text</optiontype>
+			</option>
+			<option name="thumbnailAlternativeTitle">
+				<boxtabtype>content</boxtabtype>
+				<categoryname>thumbnail</categoryname>
+				<optiontype>text</optiontype>
+			</option>
+			<option name="thumbnailImageLink">
+				<boxtabtype>content</boxtabtype>
+				<categoryname>thumbnail</categoryname>
+				<optiontype>text</optiontype>
+				<validationpattern>^$|^https?://</validationpattern>
+				<defaultvalue>http://</defaultvalue>
+			</option>
+			<option name="thumbnailEnableFullsize">
+				<boxtabtype>content</boxtabtype>
+				<categoryname>thumbnail</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<enableoptions>!thumbnailImageLink</enableoptions>
+			</option>
+			
+			<!-- html box tab type -->
+			<option name="htmlCode">
+				<boxtabtype>html</boxtabtype>
+				<categoryname>data</categoryname>
+				<optiontype>textarea</optiontype>
+			</option>
+			
+			<!-- image box tab type -->
+			<option name="image">
+				<boxtabtype>image</boxtabtype>
+				<categoryname>data</categoryname>
+				<optiontype>text</optiontype>
+			</option>
+			<option name="title">
+				<boxtabtype>image</boxtabtype>
+				<categoryname>data</categoryname>
+				<optiontype>text</optiontype>
+			</option>
+			<option name="alternativeTitle">
+				<boxtabtype>image</boxtabtype>
+				<categoryname>data</categoryname>
+				<optiontype>text</optiontype>
+			</option>
+			<option name="imageLink">
+				<boxtabtype>image</boxtabtype>
+				<categoryname>data</categoryname>
+				<optiontype>text</optiontype>
+				<validationpattern>^$|^https?://</validationpattern>
+				<defaultvalue>http://</defaultvalue>
+			</option>
+			<option name="enableFullsize">
+				<boxtabtype>image</boxtabtype>
+				<categoryname>settings</categoryname>
+				<optiontype>boolean</optiontype>
+				<defaultvalue>1</defaultvalue>
+				<enableoptions>!imageLink</enableoptions>
+			</option>
+			
+			<!-- list box tab type -->
+			<option name="listItems">
+				<boxtabtype>list</boxtabtype>
+				<categoryname>data</categoryname>
+				<optiontype>textarea</optiontype>
+			</option>
+			<option name="listStyleType">
+				<boxtabtype>list</boxtabtype>
+				<categoryname>settings</categoryname>
+				<optiontype>select</optiontype>
+				<selectoptions><![CDATA[none
+decimal
+lower-roman
+upper-roman
+lower-alpha
+upper-alpha
+disc
+circle
+square]]></selectoptions>
+				<defaultvalue>none</defaultvalue>
+			</option>
+		</options>
+	</import>
+</data>

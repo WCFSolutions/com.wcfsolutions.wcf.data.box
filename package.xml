@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package name="com.wcfsolutions.wcf.data.box" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com/XSD/package.xsd">
+	<packageinformation>
+		<packagename>Box System</packagename>
+		<isunique>1</isunique>
+		<version>1.1.0</version>
+		<date>2011-09-09</date>
+	</packageinformation>
+	
+	<authorinformation>
+		<author>WCF Solutions</author>
+		<authorurl>http://www.wcfsolutions.com</authorurl>
+	</authorinformation>
+	
+	<requiredpackages>
+		<requiredpackage minversion="1.1.4 Beta 1">com.woltlab.wcf</requiredpackage>
+	</requiredpackages>
+	
+	<optionalpackages>
+		<optionalpackage file="optionals/com.wcfsolutions.wcf.data.box.tab.type.tagCloud.tar">com.wcfsolutions.wcf.data.box.tab.type.tagCloud</optionalpackage>
+		<optionalpackage file="optionals/com.wcfsolutions.wcf.data.box.tab.type.userGallery.tar">com.wcfsolutions.wcf.data.box.tab.type.userGallery</optionalpackage>
+		<optionalpackage file="optionals/com.wcfsolutions.wcf.data.box.tab.type.usersOnline.tar">com.wcfsolutions.wcf.data.box.tab.type.usersOnline</optionalpackage>
+		<optionalpackage file="optionals/com.wcfsolutions.wcf.data.box.tab.type.wbbPosts.tar">com.wcfsolutions.wcf.data.box.tab.type.wbbPosts</optionalpackage>
+		<optionalpackage file="optionals/com.wcfsolutions.wcf.data.box.tab.type.wsifEntries.tar">com.wcfsolutions.wcf.data.box.tab.type.wsifEntries</optionalpackage>
+	</optionalpackages>
+	
+	<excludedpackages>
+		<excludedpackage>com.wcfsolutions.wcf.acp.system.fileSystem</excludedpackage>
+		<excludedpackage>com.wcfsolutions.wcf.data.box.type.lastUserGalleryPhotos</excludedpackage>
+		<excludedpackage>com.wcfsolutions.wcf.data.box.type.navigation</excludedpackage>
+		<excludedpackage>com.wcfsolutions.wcf.data.box.type.tagCloud</excludedpackage>
+		<excludedpackage>com.wcfsolutions.wcf.data.box.type.tinyMCE</excludedpackage>
+	</excludedpackages>
+	
+	<instructions type="install">
+		<!-- pips -->
+		<packageinstallationplugins>pip.tar</packageinstallationplugins>
+		
+		<!-- files -->
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<sql>install.sql</sql>
+		<script>acp/install_box.php</script>
+		
+		<!-- config -->
+		<eventlistener>eventlistener.xml</eventlistener>
+		<groupoptions>groupoptions.xml</groupoptions>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<boxtabtype>boxtabtype.xml</boxtabtype>
+		<boxtaboptions>boxtaboptions.xml</boxtaboptions>
+		
+		<!-- languages -->
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.1.0 RC 1">
+		<x></x>
+	</instructions>
+	
+	<instructions type="update" fromversion="1.0.1">	
+		<!-- pips -->
+		<packageinstallationplugins>pip.tar</packageinstallationplugins>
+		
+		<!-- files -->
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
+		<sql>update_101.sql</sql>
+		<script>acp/update_box_101.php</script>
+		
+		<!-- config -->
+		<groupoptions>groupoptions.xml</groupoptions>
+		<acpmenu>acpmenu.xml</acpmenu>
+		<boxtabtype>boxtabtype.xml</boxtabtype>
+		<boxtaboptions>boxtaboptions.xml</boxtaboptions>
+		
+		<!-- languages -->
+		<languages languagecode="de">de.xml</languages>
+		<languages languagecode="de-informal">de-informal.xml</languages>
+	</instructions>
+</package>

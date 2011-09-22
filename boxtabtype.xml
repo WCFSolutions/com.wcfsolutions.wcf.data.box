@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.wcfsolutions.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wcfsolutions.com/XSD/box-tab-type.xsd">
+	<import>
+		<type>
+			<name>content</name>
+			<classfile>lib/data/box/tab/type/ContentBoxTabType.class.php</classfile>
+		</type>
+		<type>
+			<name>html</name>
+			<classfile>lib/data/box/tab/type/HTMLBoxTabType.class.php</classfile>
+		</type>
+		<type>
+			<name>image</name>
+			<classfile>lib/data/box/tab/type/ImageBoxTabType.class.php</classfile>
+		</type>
+		<type>
+			<name>list</name>
+			<classfile>lib/data/box/tab/type/ListBoxTabType.class.php</classfile>
+		</type>
+	</import>
+</data>

@@ -1,0 +1,115 @@
+DROP TABLE IF EXISTS wcf1_box;
+CREATE TABLE wcf1_box (
+	boxID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	packageID INT(10) NOT NULL DEFAULT 0,
+	box VARCHAR(255) NOT NULL DEFAULT '',
+	enableTitle TINYINT(1) NOT NULL DEFAULT 0,
+	isClosable TINYINT(1) NOT NULL DEFAULT 0,
+	KEY (packageID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_tab;
+CREATE TABLE wcf1_box_tab (
+	boxTabID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	packageID INT(10) NOT NULL DEFAULT 0,
+	boxID INT(10) NOT NULL DEFAULT 0,
+	boxTab VARCHAR(255) NOT NULL DEFAULT '',
+	boxTabType VARCHAR(125) NOT NULL DEFAULT '',
+	showOrder INT(10) NOT NULL DEFAULT 0,
+	KEY (packageID),
+	KEY (boxID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_to_layout;
+CREATE TABLE wcf1_box_to_layout (
+	boxID INT(10) NOT NULL DEFAULT 0,
+	boxLayoutID INT(10) NOT NULL DEFAULT 0,
+	boxPositionID INT(10) NOT NULL DEFAULT 0,
+	showOrder INT(10) NOT NULL DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_closed_to_user;
+CREATE TABLE wcf1_box_closed_to_user (
+	boxID INT(10) NOT NULL DEFAULT 0,
+	userID INT(10) NOT NULL DEFAULT 0,
+	boxPosition VARCHAR(255) NOT NULL DEFAULT '',
+	isClosed TINYINT(1) NOT NULL DEFAULT 0,
+	UNIQUE KEY (userID, boxID, boxPosition),
+	KEY (boxID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_layout;
+CREATE TABLE wcf1_box_layout (
+	boxLayoutID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	packageID INT(10) NOT NULL DEFAULT 0,
+	title VARCHAR(255) NOT NULL DEFAULT '',
+	isDefault TINYINT(1) NOT NULL DEFAULT 0,
+	KEY (packageID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_layout_to_package;
+CREATE TABLE wcf1_box_layout_to_package (
+	boxLayoutID INT(10) NOT NULL,
+	packageID INT(10) NOT NULL,
+	UNIQUE KEY (boxLayoutID, packageID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_position;
+CREATE TABLE wcf1_box_position (
+	boxPositionID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	packageID INT(10) NOT NULL DEFAULT 0,
+	boxPosition VARCHAR(255) NOT NULL DEFAULT '',
+	UNIQUE KEY (packageID, boxPosition),
+	KEY (packageID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_tab_type;
+CREATE TABLE wcf1_box_tab_type (
+	boxTabTypeID INT(10) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	packageID INT(10) NOT NULL DEFAULT 0,
+	boxTabType VARCHAR(125) NOT NULL DEFAULT '',
+	classFile VARCHAR(255) NOT NULL,
+	UNIQUE KEY (packageID, boxTabType),
+	KEY (packageID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_tab_option_category;
+CREATE TABLE wcf1_box_tab_option_category (
+	categoryID INT(10) NOT NULL AUTO_INCREMENT,
+	packageID INT(10) NOT NULL DEFAULT 0,
+	categoryName VARCHAR(255) NOT NULL DEFAULT '',
+	parentCategoryName VARCHAR(255) NOT NULL DEFAULT '',
+	showOrder INT(10) NOT NULL DEFAULT 0,
+	permissions TEXT,
+	options TEXT,
+	PRIMARY KEY (categoryID),
+	UNIQUE KEY (categoryName, packageID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_tab_option;
+CREATE TABLE wcf1_box_tab_option  (
+	optionID INT(10) NOT NULL AUTO_INCREMENT,
+	packageID INT(10) NOT NULL DEFAULT 0,
+	boxTabType VARCHAR(125) NOT NULL DEFAULT '',
+	optionName VARCHAR(200) NOT NULL DEFAULT '',
+	categoryName VARCHAR(255) NOT NULL DEFAULT '',
+	optionType VARCHAR(255) NOT NULL DEFAULT '',
+	defaultValue MEDIUMTEXT,
+	validationPattern TEXT,
+	selectOptions MEDIUMTEXT,
+	enableOptions MEDIUMTEXT,
+	showOrder INT(10) NOT NULL DEFAULT 0,
+	permissions TEXT,
+	options TEXT,
+	additionalData MEDIUMTEXT,
+	PRIMARY KEY (optionID),
+	UNIQUE KEY (boxTabType, optionName, packageID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS wcf1_box_tab_option_value;
+CREATE TABLE wcf1_box_tab_option_value  (
+	boxTabID INT(10) NOT NULL DEFAULT 0,
+	optionID INT(10) NOT NULL DEFAULT 0,
+	optionValue MEDIUMTEXT,
+	PRIMARY KEY (boxTabID, optionID)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
