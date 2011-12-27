@@ -91,7 +91,7 @@ WCF::getDB()->sendQuery($sql);
 require_once(WCF_DIR.'lib/data/box/BoxEditor.class.php');
 $sql = "SELECT	boxID
 	FROM	wcf".WCF_N."_box_tab
-	WHERE	boxTabType = 'tinyMCE";
+	WHERE	boxTabType = 'tinyMCE'";
 $result = WCF::getDB()->sendQuery($sql);
 while ($row = WCF::getDB()->fetchArray($result)) {
 	$box = new BoxEditor(null, $row);

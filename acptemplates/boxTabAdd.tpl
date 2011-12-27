@@ -27,30 +27,37 @@
 		</ul>
 	</div>
 </div>
+
+{if $action == 'add'}
+	<fieldset>
+		<legend>{lang}wcf.acp.box.tab.type{/lang}</legend>
+		
+		<div class="formElement" id="boxTabTypeDiv">
+			<div class="formFieldLabel">
+				<label for="boxTabTypeChange">{lang}wcf.acp.box.tab.type{/lang}</label>
+			</div>
+			<div class="formField">
+				<select id="boxTabTypeChange" onchange="document.location.href=fixURL('index.php?form=BoxTabAdd{if $boxID}&amp;boxID={@$boxID}{/if}&amp;boxTabTypeID='+this.options[this.selectedIndex].value+'&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}')">
+					{htmloptions options=$boxTabTypes selected=$boxTabTypeID disableEncoding=true}
+				</select>
+			</div>
+			<div class="formFieldDesc hidden" id="boxTabTypeHelpMessage">
+				{lang}wcf.acp.box.tab.type.description{/lang}
+			</div>
+		</div>
+		<script type="text/javascript">//<![CDATA[
+		inlineHelp.register('boxTabType');
+		//]]></script>
+	</fieldset>
+{/if}
+
 <form method="post" action="index.php?form=BoxTab{@$action|ucfirst}">
 	<div class="border content">
 		<div class="container-1">
 			<fieldset>
 				<legend>{lang}wcf.acp.box.tab.general{/lang}</legend>
 				
-				{if $action == 'add'}
-					<div class="formElement" id="boxTabTypeDiv">
-						<div class="formFieldLabel">
-							<label for="boxTabTypeChange">{lang}wcf.acp.box.tab.type{/lang}</label>
-						</div>
-						<div class="formField">
-							<select id="boxTabTypeChange" onchange="document.location.href=fixURL('index.php?form=BoxTabAdd{if $boxID}&amp;boxID={@$boxID}{/if}&amp;boxTabTypeID='+this.options[this.selectedIndex].value+'&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}')">
-								{htmloptions options=$boxTabTypes selected=$boxTabTypeID disableEncoding=true}
-							</select>
-						</div>
-						<div class="formFieldDesc hidden" id="boxTabTypeHelpMessage">
-							{lang}wcf.acp.box.tab.type.description{/lang}
-						</div>
-					</div>
-					<script type="text/javascript">//<![CDATA[
-						inlineHelp.register('boxTabType');
-					//]]></script>
-				{elseif $action == 'edit'}
+				{if $action == 'edit'}
 					<div class="formElement" id="languageIDDiv">
 						<div class="formFieldLabel">
 							<label for="languageID">{lang}wcf.acp.box.tab.language{/lang}</label>

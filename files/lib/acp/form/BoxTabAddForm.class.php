@@ -3,6 +3,7 @@
 require_once(WCF_DIR.'lib/acp/form/DynamicOptionListForm.class.php');
 require_once(WCF_DIR.'lib/data/box/BoxEditor.class.php');
 require_once(WCF_DIR.'lib/data/box/tab/BoxTabEditor.class.php');
+require_once(WCF_DIR.'lib/data/ckeditor/CKEditor.class.php');
 
 /**
  * Shows the box tab add form.
