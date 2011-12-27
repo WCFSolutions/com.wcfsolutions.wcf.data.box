@@ -87,6 +87,17 @@ $sql = "UPDATE 	wcf".WCF_N."_box_tab_option
 		AND packageID = ".$this->installation->getPackageID();
 WCF::getDB()->sendQuery($sql);
 
+// delete deprecated box tabs
+require_once(WCF_DIR.'lib/data/box/BoxEditor.class.php');
+$sql = "SELECT	boxID
+	FROM	wcf".WCF_N."_box_tab
+	WHERE	boxTabType = 'tinyMCE";
+$result = WCF::getDB()->sendQuery($sql);
+while ($row = WCF::getDB()->fetchArray($result)) {
+	$box = new BoxEditor(null, $row);
+	$box->delete();
+}
+
 // get languages
 require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
 $languageCodes = LanguageEditor::getAvailableLanguageCodes($packageID);

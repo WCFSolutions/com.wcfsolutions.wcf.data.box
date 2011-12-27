@@ -85,53 +85,5 @@ class BoxTabTypePackageInstallationPlugin extends AbstractXMLPackageInstallation
 			}
 		}
 	}
-	
-	/**
-	 * @see	PackageInstallationPlugin::uninstall()
-	 */
-	public function uninstall() {
-		// call uninstall event
-		EventHandler::fireAction($this, 'uninstall');
-		
-		// get box tab types
-		$boxTabTypes = array();
-		$sql = "SELECT	boxTabType
-			FROM	wcf".WCF_N."_".$this->tableName."
-			WHERE	packageID = ".$this->installation->getPackageID();
-		$result = WCF::getDB()->sendQuery($sql);
-		while ($row = WCF::getDB()->fetchArray($result)) {
-			$boxTabTypes[] = $row['boxTabType'];
-		}		
-		
-		if (count($boxTabTypes)) {
-			// get box tabs
-			$boxTabIDs = array();
-			$sql = "SELECT	boxTabID
-				FROM	wcf".WCF_N."_box_tab
-				WHERE	packageID = ".$this->installation->getPackageID()."
-					AND boxTabType IN ('".implode("','", array_map('escapeString', $boxTabTypes))."')";
-			$result = WCF::getDB()->sendQuery($sql);
-			while ($row = WCF::getDB()->fetchArray($result)) {
-				$boxTabIDs[] = $row['boxTabID'];
-			}
-			
-			if (count($boxTabIDs)) {
-				// delete box tabs
-				$sql = "DELETE FROM	wcf".WCF_N."_box_tab
-					WHERE		boxTabID IN (".implode(',', $boxTabIDs).")";
-				WCF::getDB()->sendQuery($sql);
-				
-				// delete box tab option values
-				$sql = "DELETE FROM	wcf".WCF_N."_box_tab_option_value
-					WHERE		boxTabID IN (".implode(',', $boxTabIDs).")";
-				WCF::getDB()->sendQuery($sql);
-			}
-			
-			// delete box tab types
-			$sql = "DELETE FROM	wcf".WCF_N."_".$this->tableName."
-				WHERE		packageID = ".$this->installation->getPackageID();
-			WCF::getDB()->sendQuery($sql);
-		}
-	}
 }
 ?>
