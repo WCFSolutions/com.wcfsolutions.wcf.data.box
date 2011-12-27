@@ -55,6 +55,13 @@ class BoxTabAddForm extends DynamicOptionListForm {
 	 */
 	public $boxTab = null;
 	
+	/**
+	 * ckeditor object
+	 *
+	 * @var	CKEditor
+	 */
+	public $ckeditor = null;
+	
 	// parameters
 	public $boxID = 0;
 	public $boxTabName = '';
@@ -93,6 +100,15 @@ class BoxTabAddForm extends DynamicOptionListForm {
 		}
 		if (!$this->boxTabType['boxTabTypeID']) {
 			throw new IllegalLinkException();
+		}
+		
+		// init ckeditor
+		if ($this->boxTabType['boxTabType'] == 'content') {
+			$this->ckeditor = new CKEditor('text');
+			$this->ckeditor->setConfigOptions(array(
+				'baseHref' => "'".$this->ckeditor->encodeJS(RELATIVE_WSIP_DIR)."'",
+				'height' => "'300px'"
+			));
 		}
 		
 		// get box id
@@ -199,6 +215,7 @@ class BoxTabAddForm extends DynamicOptionListForm {
 			'boxTabTypes' => $this->boxTabTypes,
 			'boxTabTypeID' => $this->boxTabTypeID,
 			'boxTabType' => $this->boxTabType,
+			'ckeditor' => $this->ckeditor,
 			'boxID' => $this->boxID,
 			'boxTabName' => $this->boxTabName,
 			'showOrder' => $this->showOrder,

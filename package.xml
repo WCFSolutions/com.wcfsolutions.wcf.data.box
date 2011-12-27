@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>Box System</packagename>
 		<isunique>1</isunique>
-		<version>1.1.0</version>
-		<date>2011-09-09</date>
+		<version>1.1.1</version>
+		<date>2011-12-27</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -14,6 +14,7 @@
 	
 	<requiredpackages>
 		<requiredpackage minversion="1.1.4 Beta 1">com.woltlab.wcf</requiredpackage>
+		<requiredpackage minversion="1.0.0">com.wcfsolutions.wcf.ckeditor</requiredpackage>
 	</requiredpackages>
 	
 	<optionalpackages>
@@ -55,8 +56,11 @@
 		<languages languagecode="de-informal">de-informal.xml</languages>
 	</instructions>
 	
-	<instructions type="update" fromversion="1.1.0 RC 1">
-		<x></x>
+	<instructions type="update" fromversion="1.1.0">
+		<!-- files -->
+		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.1">	

@@ -60,6 +60,15 @@ class BoxTabEditForm extends BoxTabAddForm {
 		if (!$this->boxTabType['boxTabTypeID']) {
 			throw new IllegalLinkException();
 		}
+
+		// init ckeditor
+		if ($this->boxTabType['boxTabType'] == 'content') {
+			$this->ckeditor = new CKEditor('text');
+			$this->ckeditor->setConfigOptions(array(
+				'baseHref' => "'".$this->ckeditor->encodeJS(RELATIVE_WSIP_DIR)."'",
+				'height' => "'300px'"
+			));
+		}
 		
 		// get box id
 		if (isset($_REQUEST['boxID'])) $this->boxID = intval($_REQUEST['boxID']);

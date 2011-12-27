@@ -15,6 +15,10 @@
 	<p class="success">{lang}wcf.acp.box.tab.{@$action}.success{/lang}</p>	
 {/if}
 
+{if $ckeditor}
+	{@$ckeditor->getConfigurationHTML()}
+{/if}
+
 <div class="contentHeader">
 	<div class="largeButtons">
 		<ul>
