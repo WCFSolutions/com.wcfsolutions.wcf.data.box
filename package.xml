@@ -3,8 +3,8 @@
 	<packageinformation>
 		<packagename>Box System</packagename>
 		<isunique>1</isunique>
-		<version>1.1.1</version>
-		<date>2011-12-27</date>
+		<version>1.1.2</version>
+		<date>2012-02-18</date>
 	</packageinformation>
 	
 	<authorinformation>
@@ -56,15 +56,10 @@
 		<languages languagecode="de-informal">de-informal.xml</languages>
 	</instructions>
 	
-	<instructions type="update" fromversion="1.1.0">
-		<!-- pips -->
-		<packageinstallationplugins>pip.tar</packageinstallationplugins>
-		
+	<instructions type="update" fromversion="1.1.1">
 		<!-- files -->
 		<files>files.tar</files>
-		<templates>templates.tar</templates>
-		<acptemplates>acptemplates.tar</acptemplates>
-		<script>acp/update_box_110.php</script>
+		<script>acp/update_box_111.php</script>
 	</instructions>
 	
 	<instructions type="update" fromversion="1.0.1">	
