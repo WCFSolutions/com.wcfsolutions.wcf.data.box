@@ -107,7 +107,6 @@ class BoxTabAddForm extends DynamicOptionListForm {
 		if ($this->boxTabType['boxTabType'] == 'content') {
 			$this->ckeditor = new CKEditor('text');
 			$this->ckeditor->setConfigOptions(array(
-				'baseHref' => "'".$this->ckeditor->encodeJS(RELATIVE_WSIP_DIR)."'",
 				'height' => "'300px'"
 			));
 		}
