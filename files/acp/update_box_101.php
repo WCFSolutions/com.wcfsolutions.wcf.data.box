@@ -52,7 +52,7 @@ foreach ($deprecatedFiles as $file) {
 
 // delete deprecated templates
 $deprecatedTemplates = array(
-	'contentBoxType.tpl'
+	'contentBoxType'
 );
 
 $sql = "DELETE FROM	wcf".WCF_N."_template
@@ -66,8 +66,8 @@ foreach ($deprecatedTemplates as $template) {
 
 // delete deprecated acp templates
 $deprecatedACPTemplates = array(
-	'boxAddBoxTypeSelect.tpl',
-	'boxLayout.tpl'
+	'boxAddBoxTypeSelect',
+	'boxLayout'
 );
 
 $sql = "DELETE FROM	wcf".WCF_N."_acp_template
