@@ -6,7 +6,7 @@ require_once(WCF_DIR.'lib/acp/form/BoxTabAddForm.class.php');
  * Shows the box tab edit form.
  * 
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/index.html>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	acp.form
@@ -65,7 +65,7 @@ class BoxTabEditForm extends BoxTabAddForm {
 		if ($this->boxTabType['boxTabType'] == 'content') {
 			$this->ckeditor = new CKEditor('text');
 			$this->ckeditor->setConfigOptions(array(
-				'baseHref' => "'".$this->ckeditor->encodeJS(RELATIVE_WSIP_DIR)."'",
+				'baseHref' => "'".$this->ckeditor->encodeJS('../')."'",
 				'height' => "'300px'"
 			));
 		}
