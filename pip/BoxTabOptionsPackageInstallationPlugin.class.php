@@ -36,7 +36,7 @@ class BoxTabOptionsPackageInstallationPlugin extends AbstractOptionPackageInstal
 		if (isset($option['validationpattern'])) $validationPattern = $option['validationpattern'];
 		if (isset($option['enableoptions'])) $enableOptions = $option['enableoptions'];
 		if (isset($option['showorder'])) $showOrder = intval($option['showorder']);
-		$showOrder = $this->getShowOrder($showOrder, $categoryName, $boxTabType);
+		$showOrder = $this->getBoxTabOptionShowOrder($showOrder, $categoryName, $boxTabType);
 		if (isset($option['selectoptions'])) $selectOptions = $option['selectoptions'];
 		if (isset($option['permissions'])) $permissions = $option['permissions'];
 		if (isset($option['options'])) $options = $option['options'];
@@ -123,7 +123,7 @@ class BoxTabOptionsPackageInstallationPlugin extends AbstractOptionPackageInstal
 	 * @param	string		$boxTabType
 	 * @return	integer 	new show order
 	 */
-	protected function getShowOrder($showOrder, $categoryName, $boxTabType) {
+	protected function getBoxTabOptionShowOrder($showOrder, $categoryName, $boxTabType) {
 		if ($showOrder === null) {
 	        	 // get greatest showOrder value
 	          	$sql = "SELECT	MAX(showOrder) AS showOrder
