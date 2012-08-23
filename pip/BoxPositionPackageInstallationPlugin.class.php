@@ -4,9 +4,9 @@ require_once(WCF_DIR.'lib/acp/package/plugin/AbstractXMLPackageInstallationPlugi
 
 /**
  * This PIP installs, updates or deletes box positions.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	acp.package.plugin
@@ -15,20 +15,20 @@ require_once(WCF_DIR.'lib/acp/package/plugin/AbstractXMLPackageInstallationPlugi
 class BoxPositionPackageInstallationPlugin extends AbstractXMLPackageInstallationPlugin {
 	public $tagName = 'boxposition';
 	public $tableName = 'box_position';
-	
-	/** 
+
+	/**
 	 * @see PackageInstallationPlugin::install()
 	 */
 	public function install() {
 		parent::install();
-		
+
 		if (!$xml = $this->getXML()) {
 			return;
 		}
-		
+
 		// Create an array with the data blocks (import or delete) from the xml file.
 		$boxPositionXML = $xml->getElementTree('data');
-		
+
 		// Loop through the array and install or uninstall items.
 		foreach ($boxPositionXML['children'] as $key => $block) {
 			if (count($block['children'])) {
@@ -41,13 +41,13 @@ class BoxPositionPackageInstallationPlugin extends AbstractXMLPackageInstallatio
 							if (!isset($child['cdata'])) continue;
 							$boxPosition[$child['name']] = $child['cdata'];
 						}
-						
+
 						// default values
 						$name = '';
-						
+
 						// get values
 						if (isset($boxPosition['name'])) $name = $boxPosition['name'];
-						
+
 						// insert items
 						$sql = "INSERT IGNORE INTO		wcf".WCF_N."_box_position
 											(packageID, boxPosition)
@@ -66,9 +66,9 @@ class BoxPositionPackageInstallationPlugin extends AbstractXMLPackageInstallatio
 							if (!isset($child['cdata'])) continue;
 							$boxPosition[$child['name']] = $child['cdata'];
 						}
-						
+
 						if (empty($boxPosition['name'])) {
-							throw new SystemException("Required 'name' attribute for box position is missing", 13023); 
+							throw new SystemException("Required 'name' attribute for box position is missing", 13023);
 						}
 						$nameArray[] = $boxPosition['name'];
 					}
@@ -82,14 +82,14 @@ class BoxPositionPackageInstallationPlugin extends AbstractXMLPackageInstallatio
 			}
 		}
 	}
-	
+
 	/**
 	 * @see	PackageInstallationPlugin::uninstall()
 	 */
 	public function uninstall() {
 		// call uninstall event
 		EventHandler::fireAction($this, 'uninstall');
-		
+
 		// get box positions
 		$boxPositionIDs = $boxPositions = array();
 		$sql = "SELECT	boxPositionID, boxPosition
@@ -100,19 +100,19 @@ class BoxPositionPackageInstallationPlugin extends AbstractXMLPackageInstallatio
 			$boxPositionIDs[] = $row['boxPositionID'];
 			$boxPositions[] = $row['boxPosition'];
 		}
-		
-		if (count($boxPositions)) {			
+
+		if (count($boxPositions)) {
 			// delete box to layouts
 			$sql = "DELETE FROM	wcf".WCF_N."_box_to_layout
 				WHERE		boxPositionID IN (".implode(',', $boxPositionIDs).")";
 			WCF::getDB()->sendQuery($sql);
-			
+
 			// delete box closed to user
 			// @todo: use boxPositionID here, other packages can install box positions with the same name!
 			$sql = "DELETE FROM	wcf".WCF_N."_box_closed_to_user
 				WHERE		boxPosition IN ('".implode("','", array_map('escapeString', $boxPositions))."')";
 			WCF::getDB()->sendQuery($sql);
-			
+
 			// delete box positions
 			$sql = "DELETE FROM	wcf".WCF_N."_".$this->tableName."
 				WHERE		packageID = ".$this->installation->getPackageID();

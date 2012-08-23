@@ -7,7 +7,7 @@ require_once(WCF_DIR.'lib/system/language/LanguageEditor.class.php');
  * Provides functions to manage boxes.
  *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	data.box
@@ -32,10 +32,10 @@ class BoxEditor extends Box {
 			parent::__construct(null, $row);
 		}
 	}
-	
+
 	/**
 	 * Updates this box.
-	 * 
+	 *
 	 * @param	string		$boxName
 	 * @param	string		$description
 	 * @param	integer		$enableTitle
@@ -51,7 +51,7 @@ class BoxEditor extends Box {
 				isClosable = ".$isClosable."
 			WHERE	boxID = ".$this->boxID;
 		WCF::getDB()->sendQuery($sql);
-		
+
 		// update language items
 		if ($languageID != 0) {
 			// save language variables
@@ -60,7 +60,7 @@ class BoxEditor extends Box {
 			LanguageEditor::deleteLanguageFiles($languageID, 'wcf.box', $packageID);
 		}
 	}
-	
+
 	/**
 	 * Deletes this box.
 	 */
@@ -80,26 +80,26 @@ class BoxEditor extends Box {
 			require_once(WCF_DIR.'lib/data/box/tab/BoxTabEditor.class.php');
 			BoxTabEditor::deleteAll($boxTabIDs);
 		}
-			
+
 		// delete box to layout
 		$sql = "DELETE FROM	wcf".WCF_N."_box_to_layout
 			WHERE		boxID = ".$this->boxID;
 		WCF::getDB()->sendQuery($sql);
-		
+
 		// delete box closed to user
 		$sql = "DELETE FROM	wcf".WCF_N."_box_closed_to_user
 			WHERE		boxID = ".$this->boxID;
 		WCF::getDB()->sendQuery($sql);
-		
+
 		// delete box
 		$sql = "DELETE FROM	wcf".WCF_N."_box
 			WHERE		boxID = ".$this->boxID;
 		WCF::getDB()->sendQuery($sql);
 	}
-	
+
 	/**
 	 * Creates a new box.
-	 * 
+	 *
 	 * @param	string		$boxName
 	 * @param	string		$description
 	 * @param	integer		$enableTitle
@@ -108,20 +108,20 @@ class BoxEditor extends Box {
 	 * @param	integer		$packageID
 	 * @return	BoxEditor
 	 */
-	public static function create($boxName, $description, $enableTitle, $isClosable, $languageID = 0, $packageID = PACKAGE_ID) {		
+	public static function create($boxName, $description, $enableTitle, $isClosable, $languageID = 0, $packageID = PACKAGE_ID) {
 		// get box name
 		$box = '';
 		if ($languageID == 0) $box = $boxName;
-		
+
 		// save box
 		$sql = "INSERT INTO	wcf".WCF_N."_box
 					(packageID, box, enableTitle, isClosable)
 			VALUES		(".$packageID.", '".escapeString($box)."', ".$enableTitle.", ".$isClosable.")";
 		WCF::getDB()->sendQuery($sql);
-		
+
 		// get box id
 		$boxID = WCF::getDB()->getInsertID("wcf".WCF_N."_box", 'boxID');
-		
+
 		// update language items
 		if ($languageID != 0) {
 			// set name
@@ -130,17 +130,17 @@ class BoxEditor extends Box {
 				SET	box = '".escapeString($box)."'
 				WHERE 	boxID = ".$boxID;
 			WCF::getDB()->sendQuery($sql);
-			
+
 			// save language variables
 			$language = new LanguageEditor($languageID);
 			$language->updateItems(array('wcf.box.'.$box => $boxName, 'wcf.box.'.$box.'.description' => $description), 0, $packageID);
 			LanguageEditor::deleteLanguageFiles($languageID, 'wcf.box', $packageID);
 		}
-		
+
 		// return new box
 		return new BoxEditor($boxID, null, null, false);
 	}
-	
+
 	/**
 	 * Clears the box cache.
 	 */

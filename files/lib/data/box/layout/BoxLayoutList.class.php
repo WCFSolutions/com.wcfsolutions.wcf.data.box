@@ -5,9 +5,9 @@ require_once(WCF_DIR.'lib/data/box/layout/BoxLayout.class.php');
 
 /**
  * Represents a list of box layouts.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	data.box.layout
@@ -16,7 +16,7 @@ require_once(WCF_DIR.'lib/data/box/layout/BoxLayout.class.php');
 class BoxLayoutList extends DatabaseObjectList {
 	/**
 	 * list of box layouts
-	 * 
+	 *
 	 * @var array<BoxLayout>
 	 */
 	public $boxLayouts = array();
@@ -31,7 +31,7 @@ class BoxLayoutList extends DatabaseObjectList {
 		$row = WCF::getDB()->getFirstRow($sql);
 		return $row['count'];
 	}
-	
+
 	/**
 	 * @see DatabaseObjectList::readObjects()
 	 */
@@ -48,7 +48,7 @@ class BoxLayoutList extends DatabaseObjectList {
 			$this->boxLayouts[] = new BoxLayout(null, $row);
 		}
 	}
-	
+
 	/**
 	 * @see DatabaseObjectList::getObjects()
 	 */

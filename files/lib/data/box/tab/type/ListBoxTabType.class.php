@@ -4,9 +4,9 @@ require_once(WCF_DIR.'lib/data/box/tab/type/AbstractBoxTabType.class.php');
 
 /**
  * Represents a list box tab type.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	data.box.tab.type
@@ -15,11 +15,11 @@ require_once(WCF_DIR.'lib/data/box/tab/type/AbstractBoxTabType.class.php');
 class ListBoxTabType extends AbstractBoxTabType {
 	/**
 	 * list of data
-	 * 
+	 *
 	 * @var	array
 	 */
 	public $data = array();
-	
+
 	/**
 	 * @see	BoxTabType::cache()
 	 */
@@ -31,21 +31,21 @@ class ListBoxTabType extends AbstractBoxTabType {
 			);
 		}
 	}
-	
+
 	/**
 	 * @see	BoxTabType::getData()
 	 */
 	public function getData(BoxTab $boxTab) {
 		return $this->data[$boxTab->boxTabID];
 	}
-	
+
 	/**
 	 * @see	BoxTabType::isAccessible()
 	 */
 	public function isAccessible(BoxTab $boxTab) {
 		return count($this->data[$boxTab->boxTabID]['listItems']);
 	}
-	
+
 	/**
 	 * @see	BoxTabType::getTemplateName()
 	 */

@@ -4,9 +4,9 @@ require_once(WCF_DIR.'lib/acp/option/OptionType.class.php');
 
 /**
  * OptionTypeSelect is an implementation of OptionType for a box layout select.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	acp.option
@@ -15,11 +15,11 @@ require_once(WCF_DIR.'lib/acp/option/OptionType.class.php');
 class OptionTypeBoxlayouts implements OptionType {
 	/**
 	 * list of box layouts
-	 * 
+	 *
 	 * @var	array
 	 */
 	protected $boxLayouts = null;
-	
+
 	/**
 	 * @see OptionType::getFormElement()
 	 */
@@ -28,17 +28,17 @@ class OptionTypeBoxlayouts implements OptionType {
 			if (isset($optionData['defaultValue'])) $optionData['optionValue'] = $optionData['defaultValue'];
 			else $optionData['optionValue'] = false;
 		}
-		
+
 		// read box layouts
 		$this->readBoxLayouts();
-		
+
 		WCF::getTPL()->assign(array(
 			'optionData' => $optionData,
 			'options' => $this->boxLayouts
 		));
 		return WCF::getTPL()->fetch('optionTypeSelect');
 	}
-	
+
 	/**
 	 * @see OptionType::validate()
 	 */
@@ -48,14 +48,14 @@ class OptionTypeBoxlayouts implements OptionType {
 			throw new UserInputException($optionData['optionName'], 'validationFailed');
 		}
 	}
-	
+
 	/**
 	 * @see OptionType::getData()
 	 */
 	public function getData($optionData, $newValue) {
 		return $newValue;
 	}
-	
+
 	/**
 	 * Gets the box layouts.
 	 */

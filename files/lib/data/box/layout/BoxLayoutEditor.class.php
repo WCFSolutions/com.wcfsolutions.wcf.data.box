@@ -4,9 +4,9 @@ require_once(WCF_DIR.'lib/data/box/layout/BoxLayout.class.php');
 
 /**
  * Provides functions to manage box layouts.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	data.box.layout
@@ -15,7 +15,7 @@ require_once(WCF_DIR.'lib/data/box/layout/BoxLayout.class.php');
 class BoxLayoutEditor extends BoxLayout {
 	/**
 	 * Creates a new BoxLayoutEditor object.
-	 * 
+	 *
 	 * @param	integer		$boxLayoutID
 	 * @param 	array<mixed>	$row
 	 * @param	BoxLayout	$cacheObject
@@ -31,27 +31,27 @@ class BoxLayoutEditor extends BoxLayout {
 			parent::__construct(null, $row);
 		}
 	}
-	
+
 	/**
 	 * Creates a new box layout.
-	 * 
+	 *
 	 * @param	string			$title
 	 * @param	integer			$packageID
 	 * @return	BoxLayoutEditor
 	 */
-	public static function create($title, $packageID = PACKAGE_ID) {		
+	public static function create($title, $packageID = PACKAGE_ID) {
 		$sql = "INSERT INTO	wcf".WCF_N."_box_layout
 					(packageID, title)
 			VALUES		(".$packageID.", '".escapeString($title)."')";
 		WCF::getDB()->sendQuery($sql);
-		
+
 		$boxLayoutID = WCF::getDB()->getInsertID("wcf".WCF_N."_box_layout", 'boxLayoutID');
 		return new BoxLayoutEditor($boxLayoutID, null, null, false);
 	}
-	
+
 	/**
 	 * Sets this box layout as default box layout for the package with the given package id.
-	 * 
+	 *
 	 * @param	integer			$packageID
 	 */
 	public function setAsDefault($packageID = PACKAGE_ID) {
@@ -61,17 +61,17 @@ class BoxLayoutEditor extends BoxLayout {
 			WHERE	isDefault = 1
 				AND packageID = ".$packageID;
 		WCF::getDB()->sendQuery($sql);
-		
+
 		// set new default
 		$sql = "UPDATE	wcf".WCF_N."_box_layout
 			SET	isDefault = 1
 			WHERE	boxLayoutID = ".$this->boxLayoutID;
 		WCF::getDB()->sendQuery($sql);
 	}
-	
+
 	/**
 	 * Updates this box layout.
-	 * 
+	 *
 	 * @param	string		$title
 	 */
 	public function update($title) {
@@ -80,19 +80,19 @@ class BoxLayoutEditor extends BoxLayout {
 			WHERE	boxLayoutID = ".$this->boxLayoutID;
 		WCF::getDB()->sendQuery($sql);
 	}
-	
+
 	/**
 	 * Deletes this box layout.
 	 */
 	public function delete() {
 		$sql = "DELETE FROM	wcf".WCF_N."_box_layout
 			WHERE		boxLayoutID = ".$this->boxLayoutID;
-		WCF::getDB()->sendQuery($sql);	
+		WCF::getDB()->sendQuery($sql);
 	}
-	
+
 	/**
 	 * Adds the box with the given box id to this layout.
-	 * 
+	 *
 	 * @param	integer		$boxID
 	 * @param	integer		$boxPositionID
 	 */
@@ -105,17 +105,17 @@ class BoxLayoutEditor extends BoxLayout {
 		$row = WCF::getDB()->getFirstRow($sql);
 		if (!empty($row)) $showOrder = intval($row['showOrder']) + 1;
 		else $showOrder = 1;
-		
+
 		// add box
 		$sql = "REPLACE INTO	wcf".WCF_N."_box_to_layout
 					(boxID, boxLayoutID, boxPositionID, showOrder)
 			VALUES		(".$boxID.", ".$this->boxLayoutID.", ".$boxPositionID.", ".$showOrder.")";
 		WCF::getDB()->sendQuery($sql);
 	}
-	
+
 	/**
 	 * Updates the position of a box directly.
-	 * 
+	 *
 	 * @param	integer		$boxPositionID
 	 * @param	integer		$boxID
 	 * @param	integer		$showOrder
@@ -128,10 +128,10 @@ class BoxLayoutEditor extends BoxLayout {
 				AND boxID = ".$boxID;
 		WCF::getDB()->sendQuery($sql);
 	}
-	
+
 	/**
 	 * Removes the box with the given box id from this layout.
-	 * 
+	 *
 	 * @param	integer		$boxID
 	 * @param	integer		$boxPositionID
 	 */
@@ -140,7 +140,7 @@ class BoxLayoutEditor extends BoxLayout {
 			WHERE		boxLayoutID = ".$this->boxLayoutID."
 					AND boxPositionID = ".$boxPositionID."
 					AND boxID = ".$boxID;
-		WCF::getDB()->sendQuery($sql);	
+		WCF::getDB()->sendQuery($sql);
 	}
 }
 ?>

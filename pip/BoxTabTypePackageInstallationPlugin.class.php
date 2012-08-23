@@ -4,9 +4,9 @@ require_once(WCF_DIR.'lib/acp/package/plugin/AbstractXMLPackageInstallationPlugi
 
 /**
  * This PIP installs, updates or deletes box tab types.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	acp.package.plugin
@@ -15,20 +15,20 @@ require_once(WCF_DIR.'lib/acp/package/plugin/AbstractXMLPackageInstallationPlugi
 class BoxTabTypePackageInstallationPlugin extends AbstractXMLPackageInstallationPlugin {
 	public $tagName = 'boxtabtype';
 	public $tableName = 'box_tab_type';
-	
-	/** 
+
+	/**
 	 * @see PackageInstallationPlugin::install()
 	 */
 	public function install() {
 		parent::install();
-		
+
 		if (!$xml = $this->getXML()) {
 			return;
 		}
-		
+
 		// Create an array with the data blocks (import or delete) from the xml file.
 		$boxTabTypeXML = $xml->getElementTree('data');
-		
+
 		// Loop through the array and install or uninstall items.
 		foreach ($boxTabTypeXML['children'] as $key => $block) {
 			if (count($block['children'])) {
@@ -41,14 +41,14 @@ class BoxTabTypePackageInstallationPlugin extends AbstractXMLPackageInstallation
 							if (!isset($child['cdata'])) continue;
 							$boxTabType[$child['name']] = $child['cdata'];
 						}
-						
+
 						// default values
 						$name = $classFile = '';
-						
+
 						// get values
 						if (isset($boxTabType['name'])) $name = $boxTabType['name'];
 						if (isset($boxTabType['classfile'])) $classFile = $boxTabType['classfile'];
-						
+
 						// insert items
 						$sql = "INSERT INTO			wcf".WCF_N."_box_tab_type
 											(packageID, boxTabType, classFile)
@@ -69,9 +69,9 @@ class BoxTabTypePackageInstallationPlugin extends AbstractXMLPackageInstallation
 							if (!isset($child['cdata'])) continue;
 							$boxTabType[$child['name']] = $child['cdata'];
 						}
-						
+
 						if (empty($boxTabType['name'])) {
-							throw new SystemException("Required 'name' attribute for box tab type is missing", 13023); 
+							throw new SystemException("Required 'name' attribute for box tab type is missing", 13023);
 						}
 						$nameArray[] = $boxTabType['name'];
 					}

@@ -5,9 +5,9 @@ require_once(WCF_DIR.'lib/data/box/Box.class.php');
 
 /**
  * Represents a list of boxes.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	data.box
@@ -16,7 +16,7 @@ require_once(WCF_DIR.'lib/data/box/Box.class.php');
 class BoxList extends DatabaseObjectList {
 	/**
 	 * list of boxes
-	 * 
+	 *
 	 * @var array<Box>
 	 */
 	public $boxes = array();
@@ -31,7 +31,7 @@ class BoxList extends DatabaseObjectList {
 		$row = WCF::getDB()->getFirstRow($sql);
 		return $row['count'];
 	}
-	
+
 	/**
 	 * @see DatabaseObjectList::readObjects()
 	 */
@@ -48,7 +48,7 @@ class BoxList extends DatabaseObjectList {
 			$this->boxes[] = new Box(null, $row);
 		}
 	}
-	
+
 	/**
 	 * @see DatabaseObjectList::getObjects()
 	 */

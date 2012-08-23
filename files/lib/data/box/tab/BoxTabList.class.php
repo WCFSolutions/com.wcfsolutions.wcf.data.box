@@ -5,9 +5,9 @@ require_once(WCF_DIR.'lib/data/box/tab/BoxTab.class.php');
 
 /**
  * Represents a list of box tabs.
- * 
+ *
  * @author	Sebastian Oettl
- * @copyright	2009-2011 WCF Solutions <http://www.wcfsolutions.com/index.html>
+ * @copyright	2009-2012 WCF Solutions <http://www.wcfsolutions.com/>
  * @license	GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>
  * @package	com.wcfsolutions.wcf.data.box
  * @subpackage	data.box.tab
@@ -16,7 +16,7 @@ require_once(WCF_DIR.'lib/data/box/tab/BoxTab.class.php');
 class BoxTabList extends DatabaseObjectList {
 	/**
 	 * list of box tabs
-	 * 
+	 *
 	 * @var array<BoxTab>
 	 */
 	public $boxTabs = array();
@@ -31,7 +31,7 @@ class BoxTabList extends DatabaseObjectList {
 		$row = WCF::getDB()->getFirstRow($sql);
 		return $row['count'];
 	}
-	
+
 	/**
 	 * @see DatabaseObjectList::readObjects()
 	 */
@@ -47,7 +47,7 @@ class BoxTabList extends DatabaseObjectList {
 			$this->boxTabs[] = new BoxTab(null, $row);
 		}
 	}
-	
+
 	/**
 	 * @see DatabaseObjectList::getObjects()
 	 */
