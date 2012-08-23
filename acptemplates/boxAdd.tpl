@@ -1,5 +1,5 @@
 {include file='header'}
-		
+
 <div class="mainHeadline">
 	<img src="{@RELATIVE_WCF_DIR}icon/box{@$action|ucfirst}L.png" alt="" />
 	<div class="headlineContainer">
@@ -12,7 +12,7 @@
 {/if}
 
 {if $success|isset}
-	<p class="success">{lang}wcf.acp.box.{@$action}.success{/lang}</p>	
+	<p class="success">{lang}wcf.acp.box.{@$action}.success{/lang}</p>
 {/if}
 
 <script type="text/javascript">
@@ -49,7 +49,7 @@
 		<div class="container-1">
 			<fieldset>
 				<legend>{lang}wcf.acp.box.data{/lang}</legend>
-				
+
 				{if $action == 'edit'}
 					<div class="formElement" id="languageIDDiv">
 						<div class="formFieldLabel">
@@ -70,7 +70,7 @@
 						inlineHelp.register('languageID');
 					//]]></script>
 				{/if}
-				
+
 				<div class="formElement{if $errorType.boxName|isset} formError{/if}" id="boxNameDiv">
 					<div class="formFieldLabel">
 						<label for="boxName">{lang}wcf.acp.box.boxName{/lang}</label>
@@ -90,7 +90,7 @@
 				<script type="text/javascript">//<![CDATA[
 					inlineHelp.register('boxName');
 				//]]></script>
-				
+
 				<div class="formElement" id="descriptionDiv">
 					<div class="formFieldLabel">
 						<label for="description">{lang}wcf.acp.box.description{/lang}</label>
@@ -105,7 +105,7 @@
 				<script type="text/javascript">//<![CDATA[
 					inlineHelp.register('description');
 				//]]></script>
-				
+
 				<div class="formElement" id="enableTitleDiv">
 					<div class="formField">
 						<label for="enableTitle"><input type="checkbox" name="enableTitle" id="enableTitle" value="1" {if $enableTitle}checked="checked" {/if}/> {lang}wcf.acp.box.enableTitle{/lang}</label>
@@ -117,7 +117,7 @@
 				<script type="text/javascript">//<![CDATA[
 					inlineHelp.register('enableTitle');
 				//]]></script>
-				
+
 				<div class="formElement" id="isClosableDiv">
 					<div class="formField">
 						<label for="isClosable"><input type="checkbox" name="isClosable" id="isClosable" value="1" {if $isClosable}checked="checked" {/if}/> {lang}wcf.acp.box.isClosable{/lang}</label>
@@ -129,14 +129,14 @@
 				<script type="text/javascript">//<![CDATA[
 					inlineHelp.register('isClosable');
 				//]]></script>
-				
+
 				{if $additionalFields|isset}{@$additionalFields}{/if}
 			</fieldset>
-			
+
 			{if $additionalFieldSets|isset}{@$additionalFieldSets}{/if}
 		</div>
 	</div>
-	
+
 	<div class="formSubmit">
 		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
 		<input type="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />

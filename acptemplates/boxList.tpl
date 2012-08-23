@@ -8,7 +8,7 @@
 </div>
 
 {if $deletedBoxID}
-	<p class="success">{lang}wcf.acp.box.delete.success{/lang}</p>	
+	<p class="success">{lang}wcf.acp.box.delete.success{/lang}</p>
 {/if}
 
 <div class="contentHeader">
@@ -31,7 +31,7 @@
 					<th class="columnBoxID{if $sortField == 'boxID'} active{/if}" colspan="2"><div><a href="index.php?page=BoxList&amp;pageNo={@$pageNo}&amp;sortField=boxID&amp;sortOrder={if $sortField == 'boxID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.boxID{/lang}{if $sortField == 'boxID'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 					<th class="columnBox{if $sortField == 'box'} active{/if}"><div><a href="index.php?page=BoxList&amp;pageNo={@$pageNo}&amp;sortField=box&amp;sortOrder={if $sortField == 'box' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.box{/lang}{if $sortField == 'box'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 					<th class="columnBoxTabs{if $sortField == 'boxTabs'} active{/if}"><div><a href="index.php?page=BoxList&amp;pageNo={@$pageNo}&amp;sortField=boxTabs&amp;sortOrder={if $sortField == 'boxTabs' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.boxTabs{/lang}{if $sortField == 'boxTabs'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
-					
+
 					{if $additionalColumnHeads|isset}{@$additionalColumnHeads}{/if}
 				</tr>
 			</thead>
@@ -49,7 +49,7 @@
 							{else}
 								<img src="{@RELATIVE_WCF_DIR}icon/deleteDisabledS.png" alt="" title="{lang}wcf.acp.box.delete{/lang}" />
 							{/if}
-							
+
 							{if $additionalButtons.$box->boxID|isset}{@$additionalButtons.$box->boxID}{/if}
 						</td>
 						<td class="columnBoxID columnID">{@$box->boxID}</td>
@@ -61,17 +61,17 @@
 							{/if}
 						</td>
 						<td class="columnBoxTabs columnNumbers"><a href="index.php?page=BoxTabList&amp;boxID={@$box->boxID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{@$box->boxTabs}</a></td>
-						
+
 						{if $additionalColumns.$box->boxID|isset}{@$additionalColumns.$box->boxID}{/if}
 					</tr>
 				{/foreach}
 			</tbody>
 		</table>
 	</div>
-	
+
 	<div class="contentFooter">
 		{@$pagesLinks}
-		
+
 		{if $this->user->getPermission('admin.box.canAddBox')}
 			<div class="largeButtons">
 				<ul><li><a href="index.php?form=BoxAdd&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/boxAddM.png" alt="" title="{lang}wcf.acp.box.add{/lang}" /> <span>{lang}wcf.acp.box.add{/lang}</span></a></li></ul>

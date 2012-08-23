@@ -12,7 +12,7 @@
 {/if}
 
 {if $success|isset}
-	<p class="success">{lang}wcf.acp.box.tab.{@$action}.success{/lang}</p>	
+	<p class="success">{lang}wcf.acp.box.tab.{@$action}.success{/lang}</p>
 {/if}
 
 {if $ckeditor}
@@ -31,7 +31,7 @@
 {if $action == 'add'}
 	<fieldset>
 		<legend>{lang}wcf.acp.box.tab.type{/lang}</legend>
-		
+
 		<div class="formElement" id="boxTabTypeDiv">
 			<div class="formFieldLabel">
 				<label for="boxTabTypeChange">{lang}wcf.acp.box.tab.type{/lang}</label>
@@ -56,7 +56,7 @@
 		<div class="container-1">
 			<fieldset>
 				<legend>{lang}wcf.acp.box.tab.general{/lang}</legend>
-				
+
 				{if $action == 'edit'}
 					<div class="formElement" id="languageIDDiv">
 						<div class="formFieldLabel">
@@ -77,7 +77,7 @@
 						inlineHelp.register('languageID');
 					//]]></script>
 				{/if}
-				
+
 				<div class="formElement" id="boxIDDiv">
 					<div class="formFieldLabel">
 						<label for="boxID">{lang}wcf.acp.box.tab.boxID{/lang}</label>
@@ -94,7 +94,7 @@
 				<script type="text/javascript">//<![CDATA[
 					inlineHelp.register('boxID');
 				//]]></script>
-				
+
 				<div class="formElement{if $errorType.boxTabName|isset} formError{/if}" id="boxTabNameDiv">
 					<div class="formFieldLabel">
 						<label for="boxTabName">{lang}wcf.acp.box.tab.boxTabName{/lang}</label>
@@ -114,12 +114,12 @@
 				<script type="text/javascript">//<![CDATA[
 					inlineHelp.register('boxTabName');
 				//]]></script>
-				
+
 				<div class="formElement" id="showOrderDiv">
 					<div class="formFieldLabel">
 						<label for="showOrder">{lang}wcf.acp.box.tab.showOrder{/lang}</label>
 					</div>
-					<div class="formField">	
+					<div class="formField">
 						<input type="text" class="inputText" name="showOrder" id="showOrder" value="{$showOrder}" />
 					</div>
 					<div class="formFieldDesc hidden" id="showOrderHelpMessage">
@@ -129,12 +129,12 @@
 				<script type="text/javascript">//<![CDATA[
 					inlineHelp.register('showOrder');
 				//]]></script>
-				
+
 				{if $additionalGeneralFields|isset}{@$additionalGeneralFields}{/if}
 			</fieldset>
-			
+
 			{if $additionalFields|isset}{@$additionalFields}{/if}
-			
+
 			{foreach from=$options item=categoryLevel1}
 				<fieldset>
 					<legend>{lang}wcf.acp.box.tab.option.category.{$categoryLevel1.categoryName}{/lang}</legend>
@@ -144,7 +144,7 @@
 			{/foreach}
 		</div>
 	</div>
-	
+
 	<div class="formSubmit">
 		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
 		<input type="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />

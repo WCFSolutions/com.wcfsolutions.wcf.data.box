@@ -62,6 +62,8 @@
 
                 <!-- files -->
 		<files>files.tar</files>
+		<templates>templates.tar</templates>
+		<acptemplates>acptemplates.tar</acptemplates>
 	</instructions>
 
 	<instructions type="update" fromversion="1.0.1">

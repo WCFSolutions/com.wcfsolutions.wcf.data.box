@@ -5,8 +5,8 @@
 		var boxList = $('boxList');
 		if (boxList) {
 			boxList.addClassName('dragable');
-			
-			Sortable.create(boxList, { 
+
+			Sortable.create(boxList, {
 				tag: 'tr',
 				onUpdate: function(list) {
 					var rows = list.select('tr');
@@ -36,7 +36,7 @@
 </div>
 
 {if $removedBoxID}
-	<p class="success">{lang}wcf.acp.box.layout.boxAssignment.box.remove.success{/lang}</p>	
+	<p class="success">{lang}wcf.acp.box.layout.boxAssignment.box.remove.success{/lang}</p>
 {/if}
 
 {if $boxLayoutOptions|count}
@@ -62,7 +62,7 @@
 	</fieldset>
 {/if}
 
-{if $boxLayoutID}		
+{if $boxLayoutID}
 	{if $boxPositionOptions|count}
 		<fieldset>
 			<legend>{lang}wcf.acp.box.layout.boxAssignment.boxPosition{/lang}</legend>
@@ -85,7 +85,7 @@
 			//]]></script>
 		</fieldset>
 	{/if}
-	
+
 	{if $boxPositionID}
 		<div class="border titleBarPanel">
 			<div class="containerHead"><h3>{lang}wcf.acp.box.layout.boxAssignment.boxes{/lang}</h3></div>
@@ -98,7 +98,7 @@
 							<th class="columnBoxID" colspan="2"><div><span class="emptyHead">{lang}wcf.acp.box.layout.boxAssignment.box.boxID{/lang}</span></div></th>
 							<th class="columnBox"><div><span class="emptyHead">{lang}wcf.acp.box.layout.boxAssignment.box.box{/lang}</span></div></th>
 							<th class="columnShowOrder"><div><span class="emptyHead">{lang}wcf.acp.box.layout.boxAssignment.box.showOrder{/lang}</span></div></th>
-							
+
 							{if $additionalColumnHeads|isset}{@$additionalColumnHeads}{/if}
 						</tr>
 					</thead>
@@ -112,7 +112,7 @@
 									{else}
 										<img src="{@RELATIVE_WCF_DIR}icon/deleteDisabledS.png" alt="" title="{lang}wcf.acp.box.layout.boxAssignment.box.removeDisabled{/lang}" />
 									{/if}
-									
+
 									{if $additionalButtons.$box->boxID|isset}{@$additionalButtons.$box->boxID}{/if}
 								</td>
 								<td class="columnBoxID columnID">{@$box->boxID}</td>
@@ -120,7 +120,7 @@
 									{$box->getTitle()}
 								</td>
 								<td class="columnShowOrder columnNumbers">{@$child.showOrder}</td>
-								
+
 								{if $additionalColumns.$box->boxID|isset}{@$additionalColumns.$box->boxID}{/if}
 							</tr>
 						{/foreach}

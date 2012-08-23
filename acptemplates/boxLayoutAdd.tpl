@@ -13,7 +13,7 @@
 {/if}
 
 {if $success|isset}
-	<p class="success">{lang}wcf.acp.box.layout.{@$action}.success{/lang}</p>	
+	<p class="success">{lang}wcf.acp.box.layout.{@$action}.success{/lang}</p>
 {/if}
 
 <div class="contentHeader">
@@ -27,7 +27,7 @@
 		<div class="container-1">
 			<fieldset>
 				<legend>{lang}wcf.acp.box.layout.data{/lang}</legend>
-				
+
 				<div class="formElement{if $errorField == 'title'} formError{/if}">
 					<div class="formFieldLabel">
 						<label for="title">{lang}wcf.acp.box.layout.title{/lang}</label>
@@ -41,14 +41,14 @@
 						{/if}
 					</div>
 				</div>
-				
+
 				{if $additionalGeneralFields|isset}{@$additionalGeneralFields}{/if}
 			</fieldset>
-				
+
 			{if $additionalFields|isset}{@$additionalFields}{/if}
 		</div>
 	</div>
-		
+
 	<div class="formSubmit">
 		<input type="submit" accesskey="s" value="{lang}wcf.global.button.submit{/lang}" />
 		<input type="reset" accesskey="r" value="{lang}wcf.global.button.reset{/lang}" />

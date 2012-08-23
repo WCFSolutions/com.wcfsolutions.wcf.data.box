@@ -26,7 +26,7 @@
 						</div>
 					{/if}
 				{/if}
-				<div id="{@$boxPositionIdentifier}"> 
+				<div id="{@$boxPositionIdentifier}">
 					{if $boxTabs|count > 1}
 						<div class="subTabMenu" style="display: none;">
 							<div class="containerHead">
@@ -41,7 +41,7 @@
 					{foreach from=$boxTabs item=boxTab}
 						{assign var=boxTabType value=$boxTab->getBoxTabType()}
 						{assign var=boxTabData value=$boxTabType->getData($boxTab)}
-						
+
 						<div class="tabMenuContent" id="{@$boxPositionIdentifier}_{@$boxTab->boxTabID}-content">
 							<noscript>
 								<div class="subTabMenu">
@@ -63,7 +63,7 @@
 					var {@$boxPositionIdentifier}_tabMenu = new SubTabMenu();
 					onloadEvents.push(function() { {@$boxPositionIdentifier}_tabMenu.showTabMenuContent('{@$boxPositionIdentifier}_{@$box->getFirstBoxTabID()}'); });
 				{/if}
-				
+
 				{if $box->enableTitle && $box->isClosable}
 					initList('{@$boxPositionIdentifier}', {if $box->isClosed($boxPosition) == 1}0{else}1{/if});
 				{/if}

@@ -7,8 +7,8 @@
 		if (boxTabList) {
 			boxTabList.addClassName('dragable');
 			var startValue = {if $sortOrder == 'ASC'}{@$itemsPerPage} * ({@$pageNo} - 1) + 1{else}{$items} - {@$itemsPerPage} * ({@$pageNo} - 1){/if};
-			
-			Sortable.create(boxTabList, { 
+
+			Sortable.create(boxTabList, {
 				tag: 'tr',
 				onUpdate: function(list) {
 					var rows = list.select('tr');
@@ -25,7 +25,7 @@
 					});
 				}
 			});
-		}	
+		}
 	});
 </script>
 
@@ -38,7 +38,7 @@
 </div>
 
 {if $deletedBoxTabID}
-	<p class="success">{lang}wcf.acp.box.tab.delete.success{/lang}</p>	
+	<p class="success">{lang}wcf.acp.box.tab.delete.success{/lang}</p>
 {/if}
 
 {if $boxes|count}
@@ -50,7 +50,7 @@
 			</div>
 		{/if}
 	</div>
-	
+
 	<fieldset>
 		<legend>{lang}wcf.acp.box.tab.box{/lang}</legend>
 		<div class="formElement" id="boxDiv">
@@ -92,7 +92,7 @@
 						<th class="columnBoxTab{if $sortField == 'boxTab'} active{/if}"><div><a href="index.php?page=BoxTabList&amp;boxID={@$boxID}&amp;pageNo={@$pageNo}&amp;sortField=boxTab&amp;sortOrder={if $sortField == 'boxTab' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.tab.boxTab{/lang}{if $sortField == 'boxTab'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 						<th class="columnBoxTabType{if $sortField == 'boxTabType'} active{/if}"><div><a href="index.php?page=BoxTabList&amp;boxID={@$boxID}&amp;pageNo={@$pageNo}&amp;sortField=boxTabType&amp;sortOrder={if $sortField == 'boxTabType' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.tab.boxTabType{/lang}{if $sortField == 'boxTabType'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 						<th class="columnShowOrder{if $sortField == 'showOrder'} active{/if}"><div><a href="index.php?page=BoxTabList&amp;boxID={@$boxID}&amp;pageNo={@$pageNo}&amp;sortField=showOrder&amp;sortOrder={if $sortField == 'showOrder' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.tab.showOrder{/lang}{if $sortField == 'showOrder'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
-						
+
 						{if $additionalColumnHeads|isset}{@$additionalColumnHeads}{/if}
 					</tr>
 				</thead>
@@ -110,7 +110,7 @@
 								{else}
 									<img src="{@RELATIVE_WCF_DIR}icon/deleteDisabledS.png" alt="" title="{lang}wcf.acp.box.tab.delete{/lang}" />
 								{/if}
-								
+
 								{if $additionalButtons.$boxTab->boxTabID|isset}{@$additionalButtons.$boxTab->boxTabID}{/if}
 							</td>
 							<td class="columnBoxTabID columnID">{@$boxTab->boxTabID}</td>
@@ -123,17 +123,17 @@
 							</td>
 							<td class="columnBoxTabType columnText">{lang}wcf.acp.box.tab.type.{$boxTab->boxTabType}{/lang}</td>
 							<td class="columnShowOrder columnNumbers">{@$boxTab->showOrder}</td>
-							
+
 							{if $additionalColumns.$boxTab->boxTabID|isset}{@$additionalColumns.$sboxTab->boxTabID}{/if}
 						</tr>
 					{/foreach}
 				</tbody>
 			</table>
 		</div>
-		
+
 		<div class="contentFooter">
 			{@$pagesLinks}
-			
+
 			{if $this->user->getPermission('admin.box.canAddBoxTab')}
 				<div class="largeButtons">
 					<ul><li><a href="index.php?form=BoxTabAdd&amp;boxID={@$boxID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/boxTabAddM.png" alt="" title="{lang}wcf.acp.box.tab.add{/lang}" /> <span>{lang}wcf.acp.box.tab.add{/lang}</span></a></li></ul>

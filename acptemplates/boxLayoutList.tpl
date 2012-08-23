@@ -8,7 +8,7 @@
 </div>
 
 {if $deletedBoxLayoutID}
-	<p class="success">{lang}wcf.acp.box.layout.delete.success{/lang}</p>	
+	<p class="success">{lang}wcf.acp.box.layout.delete.success{/lang}</p>
 {/if}
 
 <div class="contentHeader">
@@ -31,7 +31,7 @@
 					<th class="columnBoxLayoutID{if $sortField == 'boxLayoutID'} active{/if}" colspan="2"><div><a href="index.php?page=BoxLayoutList&amp;pageNo={@$pageNo}&amp;sortField=boxLayoutID&amp;sortOrder={if $sortField == 'boxLayoutID' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.layout.boxLayoutID{/lang}{if $sortField == 'boxLayoutID'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 					<th class="columnBoxLayout{if $sortField == 'title'} active{/if}"><div><a href="index.php?page=BoxLayoutList&amp;pageNo={@$pageNo}&amp;sortField=title&amp;sortOrder={if $sortField == 'title' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.layout.title{/lang}{if $sortField == 'title'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
 					<th class="columnBoxLayoutBoxes{if $sortField == 'boxes'} active{/if}"><div><a href="index.php?page=BoxLayoutList&amp;pageNo={@$pageNo}&amp;sortField=boxes&amp;sortOrder={if $sortField == 'boxes' && $sortOrder == 'ASC'}DESC{else}ASC{/if}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{lang}wcf.acp.box.layout.boxes{/lang}{if $sortField == 'boxes'} <img src="{@RELATIVE_WCF_DIR}icon/sort{@$sortOrder}S.png" alt="" />{/if}</a></div></th>
-					
+
 					{if $additionalColumnHeads|isset}{@$additionalColumnHeads}{/if}
 				</tr>
 			</thead>
@@ -55,7 +55,7 @@
 							{else}
 								<img src="{@RELATIVE_WCF_DIR}icon/deleteDisabledS.png" alt="" title="{lang}wcf.acp.box.layout.delete{/lang}" />
 							{/if}
-							
+
 							{if $additionalButtons.$boxLayout->boxLayoutID|isset}{@$additionalButtons.$boxLayout->boxLayoutID}{/if}
 						</td>
 						<td class="columnBoxLayoutID columnID">{@$boxLayout->boxLayoutID}</td>
@@ -67,17 +67,17 @@
 							{/if}
 						</td>
 						<td class="columnBoxes columnNumbers"><a href="index.php?page=BoxLayoutBoxAssignment&amp;boxLayoutID={@$boxLayout->boxLayoutID}&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}">{@$boxLayout->boxes}</a></td>
-						
+
 						{if $additionalColumns.$boxLayout->boxLayoutID|isset}{@$additionalColumns.$boxLayout->boxLayoutID}{/if}
 					</tr>
 				{/foreach}
 			</tbody>
 		</table>
 	</div>
-	
+
 	<div class="contentFooter">
 		{@$pagesLinks}
-		
+
 		{if $this->user->getPermission('admin.box.canAddBoxLayout')}
 			<div class="largeButtons">
 				<ul><li><a href="index.php?form=BoxLayoutAdd&amp;packageID={@PACKAGE_ID}{@SID_ARG_2ND}"><img src="{@RELATIVE_WCF_DIR}icon/boxLayoutAddM.png" alt="" title="{lang}wcf.acp.box.layout.add{/lang}" /> <span>{lang}wcf.acp.box.layout.add{/lang}</span></a></li></ul>
