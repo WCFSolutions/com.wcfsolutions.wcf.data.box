@@ -4,21 +4,6 @@
 		<item name="wcf.acp.box"><![CDATA[Box]]></item>
 		<item name="wcf.acp.box.add"><![CDATA[Box hinzufügen]]></item>
 		<item name="wcf.acp.box.add.success"><![CDATA[Die Box wurde erfolgreich hinzugefügt.]]></item>
-		<item name="wcf.acp.box.assignment"><![CDATA[Boxenzuordnung]]></item>
-		<item name="wcf.acp.box.assignment.box.add"><![CDATA[Box hinzufügen]]></item>
-		<item name="wcf.acp.box.assignment.box.boxID"><![CDATA[Box]]></item>
-		<item name="wcf.acp.box.assignment.box.invalid"><![CDATA[Die gewählte Box ist ungültig.]]></item>
-		<item name="wcf.acp.box.assignment.box.remove"><![CDATA[Box entfernen]]></item>
-		<item name="wcf.acp.box.assignment.box.remove.success"><![CDATA[Die Box wurde von dieser Position entfernt.]]></item>
-		<item name="wcf.acp.box.assignment.box.remove.sure"><![CDATA[Wollen Sie diese Box von dieser Position wirklich entfernen?]]></item>
-		<item name="wcf.acp.box.assignment.boxLayout"><![CDATA[Layout]]></item>
-		<item name="wcf.acp.box.assignment.boxLayout.description"><![CDATA[Wählen Sie das Layout aus, dessen Boxen Sie verwalten möchten.]]></item>
-		<item name="wcf.acp.box.assignment.boxPosition"><![CDATA[Position]]></item>
-		<item name="wcf.acp.box.assignment.boxPosition.description"><![CDATA[Wählen Sie die Position des Layouts &raquo;{$boxLayout->title}&laquo; aus, deren Boxen Sie verwalten möchten.]]></item>
-		<item name="wcf.acp.box.assignment.boxes"><![CDATA[Boxen]]></item>
-		<item name="wcf.acp.box.assignment.count.noBoxes"><![CDATA[Derzeit sind dieser Position keine Boxen zugeordnet.]]></item>
-		<item name="wcf.acp.box.box"><![CDATA[Name]]></item>
-		<item name="wcf.acp.box.boxID"><![CDATA[Box-ID]]></item>
 		<item name="wcf.acp.box.boxName"><![CDATA[Name]]></item>
 		<item name="wcf.acp.box.boxName.description"><![CDATA[Bestimmen Sie hier den Namen der Box.]]></item>
 		<item name="wcf.acp.box.boxTabs"><![CDATA[Boxtabs]]></item>
@@ -39,11 +24,6 @@
 		<item name="wcf.acp.box.layout"><![CDATA[Boxlayout]]></item>
 		<item name="wcf.acp.box.layout.add"><![CDATA[Boxlayout hinzufügen]]></item>
 		<item name="wcf.acp.box.layout.add.success"><![CDATA[Das Boxlayout wurde erfolgreich hinzugefügt.]]></item>
-		<item name="wcf.acp.box.layout.box.add"><![CDATA[Box hinzufügen]]></item>
-		<item name="wcf.acp.box.layout.box.boxID"><![CDATA[Box]]></item>
-		<item name="wcf.acp.box.layout.box.invalid"><![CDATA[Die gewählte Box ist ungültig.]]></item>
-		<item name="wcf.acp.box.layout.box.remove"><![CDATA[Box entfernen]]></item>
-		<item name="wcf.acp.box.layout.box.remove.sure"><![CDATA[Wollen Sie diese Box von dieser Position wirklich entfernen?]]></item>
 		<item name="wcf.acp.box.layout.boxAssignment"><![CDATA[Boxenzuordnung]]></item>
 		<item name="wcf.acp.box.layout.boxAssignment.box"><![CDATA[Box]]></item>
 		<item name="wcf.acp.box.layout.boxAssignment.box.add"><![CDATA[Box hinzufügen]]></item>
@@ -63,7 +43,6 @@
 		<item name="wcf.acp.box.layout.boxAssignment.count.noBoxes"><![CDATA[Derzeit sind dieser Position keine Boxen zugeordnet.]]></item>
 		<item name="wcf.acp.box.layout.boxLayoutID"><![CDATA[Boxlayout-ID]]></item>
 		<item name="wcf.acp.box.layout.boxes"><![CDATA[Boxen]]></item>
-		<item name="wcf.acp.box.layout.count.noBoxes"><![CDATA[Derzeit sind dieser Position keine Boxen zugeordnet.]]></item>
 		<item name="wcf.acp.box.layout.data"><![CDATA[Daten]]></item>
 		<item name="wcf.acp.box.layout.delete"><![CDATA[Boxlayout löschen]]></item>
 		<item name="wcf.acp.box.layout.delete.success"><![CDATA[Das Boxlayout wurde erfolgreich gelöscht.]]></item>
@@ -171,7 +150,6 @@
 	<category name="wcf.acp.menu">
 		<item name="wcf.acp.menu.link.content.box"><![CDATA[Boxen]]></item>
 		<item name="wcf.acp.menu.link.content.box.add"><![CDATA[Box hinzufügen]]></item>
-		<item name="wcf.acp.menu.link.content.box.assignment"><![CDATA[Boxenzuordnung]]></item>
 		<item name="wcf.acp.menu.link.content.box.layout.add"><![CDATA[Boxlayout hinzufügen]]></item>
 		<item name="wcf.acp.menu.link.content.box.layout.boxAssignment"><![CDATA[Boxenzuordnung]]></item>
 		<item name="wcf.acp.menu.link.content.box.layout.view"><![CDATA[Boxlayouts auflisten]]></item>
@@ -180,21 +158,15 @@
 		<item name="wcf.acp.menu.link.content.box.view"><![CDATA[Boxen auflisten]]></item>
 	</category>
 	<category name="wcf.acp.package">
-		<item name="wcf.acp.package.step.install.BoxOptionsPackageInstallationPlugin"><![CDATA[Boxeinstellungen werden installiert ...]]></item>
 		<item name="wcf.acp.package.step.install.BoxPositionPackageInstallationPlugin"><![CDATA[Boxpositionen werden installiert ...]]></item>
 		<item name="wcf.acp.package.step.install.BoxTabOptionsPackageInstallationPlugin"><![CDATA[Boxtab-Einstellungen werden installiert ...]]></item>
 		<item name="wcf.acp.package.step.install.BoxTabTypePackageInstallationPlugin"><![CDATA[Boxtab-Typen werden installiert ...]]></item>
-		<item name="wcf.acp.package.step.install.BoxTypePackageInstallationPlugin"><![CDATA[Boxtypen werden installiert ...]]></item>
-		<item name="wcf.acp.package.step.uninstall.BoxOptionsPackageInstallationPlugin"><![CDATA[Boxeinstellungen werden deinstalliert ...]]></item>
 		<item name="wcf.acp.package.step.uninstall.BoxPositionPackageInstallationPlugin"><![CDATA[Boxpositionen werden deinstalliert ...]]></item>
 		<item name="wcf.acp.package.step.uninstall.BoxTabOptionsPackageInstallationPlugin"><![CDATA[Boxtab-Einstellungen werden deinstalliert ...]]></item>
 		<item name="wcf.acp.package.step.uninstall.BoxTabTypePackageInstallationPlugin"><![CDATA[Boxtab-Typen werden deinstalliert ...]]></item>
-		<item name="wcf.acp.package.step.uninstall.BoxTypePackageInstallationPlugin"><![CDATA[Boxtypen werden deinstalliert ...]]></item>
-		<item name="wcf.acp.package.step.update.BoxOptionsPackageInstallationPlugin"><![CDATA[Boxeinstellungen werden aktualisiert ...]]></item>
 		<item name="wcf.acp.package.step.update.BoxPositionPackageInstallationPlugin"><![CDATA[Boxpositionen werden aktualisiert ...]]></item>
 		<item name="wcf.acp.package.step.update.BoxTabOptionsPackageInstallationPlugin"><![CDATA[Boxtab-Einstellungen werden aktualisiert ...]]></item>
 		<item name="wcf.acp.package.step.update.BoxTabTypePackageInstallationPlugin"><![CDATA[Boxtab-Typen werden aktualisiert ...]]></item>
-		<item name="wcf.acp.package.step.update.BoxTypePackageInstallationPlugin"><![CDATA[Boxtypen werden aktualisiert ...]]></item>
 	</category>
 	<category name="wcf.box">
 		<item name="wcf.box.close"><![CDATA[Box schließen]]></item>
