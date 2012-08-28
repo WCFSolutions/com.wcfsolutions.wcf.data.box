@@ -71,7 +71,7 @@
 					//]]></script>
 				{/if}
 
-				<div class="formElement{if $errorType.boxName|isset} formError{/if}" id="boxNameDiv">
+				<div class="formElement{if $errorField == 'boxName'} formError{/if}" id="boxNameDiv">
 					<div class="formFieldLabel">
 						<label for="boxName">{lang}wcf.acp.box.boxName{/lang}</label>
 					</div>
