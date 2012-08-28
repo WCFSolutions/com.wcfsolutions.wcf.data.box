@@ -4,6 +4,8 @@
 		<item name="wcf.acp.box"><![CDATA[Box]]></item>
 		<item name="wcf.acp.box.add"><![CDATA[Box hinzufügen]]></item>
 		<item name="wcf.acp.box.add.success"><![CDATA[Die Box wurde erfolgreich hinzugefügt.]]></item>
+		<item name="wcf.acp.box.box"><![CDATA[Name]]></item>
+		<item name="wcf.acp.box.boxID"><![CDATA[Box-ID]]></item>
 		<item name="wcf.acp.box.boxName"><![CDATA[Name]]></item>
 		<item name="wcf.acp.box.boxName.description"><![CDATA[Bestimme hier den Namen der Box.]]></item>
 		<item name="wcf.acp.box.boxTabs"><![CDATA[Boxtabs]]></item>
