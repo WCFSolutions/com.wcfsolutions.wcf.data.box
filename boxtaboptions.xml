@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<data xmlns="http://www.wcfsolutions.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wcfsolutions.com/XSD/box-tab-options.xsd">
+<data xmlns="http://www.wcfsolutions.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wcfsolutions.com http://www.wcfsolutions.com/XSD/box-tab-options.xsd">
 	<import>
 		<categories>
 			<category name="data">
@@ -48,14 +48,14 @@
 				<defaultvalue>1</defaultvalue>
 				<enableoptions>!thumbnailImageLink</enableoptions>
 			</option>
-			
+
 			<!-- html box tab type -->
 			<option name="htmlCode">
 				<boxtabtype>html</boxtabtype>
 				<categoryname>data</categoryname>
 				<optiontype>textarea</optiontype>
 			</option>
-			
+
 			<!-- image box tab type -->
 			<option name="image">
 				<boxtabtype>image</boxtabtype>
@@ -86,7 +86,7 @@
 				<defaultvalue>1</defaultvalue>
 				<enableoptions>!imageLink</enableoptions>
 			</option>
-			
+
 			<!-- list box tab type -->
 			<option name="listItems">
 				<boxtabtype>list</boxtabtype>
