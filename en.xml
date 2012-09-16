@@ -22,7 +22,7 @@
 		<item name="wcf.acp.box.isClosable"><![CDATA[Can be closed]]></item>
 		<item name="wcf.acp.box.isClosable.description"><![CDATA[Should the box can be closed?]]></item>
 		<item name="wcf.acp.box.language"><![CDATA[Language]]></item>
-		<item name="wcf.acp.box.language.description"><![CDATA[Please select the language of the following texts please.]]></item>
+		<item name="wcf.acp.box.language.description"><![CDATA[Please select the language of the following texts.]]></item>
 		<item name="wcf.acp.box.layout"><![CDATA[Box layout]]></item>
 		<item name="wcf.acp.box.layout.add"><![CDATA[Add box layout]]></item>
 		<item name="wcf.acp.box.layout.add.success"><![CDATA[The box layout was added successfully.]]></item>
@@ -76,7 +76,7 @@
 		<item name="wcf.acp.box.tab.edit.success"><![CDATA[The box tab was edited successfully.]]></item>
 		<item name="wcf.acp.box.tab.general"><![CDATA[General data]]></item>
 		<item name="wcf.acp.box.tab.language"><![CDATA[Language]]></item>
-		<item name="wcf.acp.box.tab.language.description"><![CDATA[Please select the language of the following texts please.]]></item>
+		<item name="wcf.acp.box.tab.language.description"><![CDATA[Please select the language of the following texts.]]></item>
 		<item name="wcf.acp.box.tab.option.category.data"><![CDATA[Data]]></item>
 		<item name="wcf.acp.box.tab.option.category.data.description"><![CDATA[]]></item>
 		<item name="wcf.acp.box.tab.option.category.settings"><![CDATA[Settings]]></item>
